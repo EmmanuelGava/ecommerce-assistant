@@ -1,0 +1,8 @@
+$token = "ya29.c.c0ASRK0GauiyoCeVf2fXfv5htXbjjhCxqVxkbN09FmKWJOS3NvG8-M0w_LCE0kmXdFAte5imf3JO2pCEKhc2dvLS4WfNyT6YAVTjD_7v3dfltS_d-ZrY7UNGlH8XKHGW5A5m0IQ2c9g4aLPPkjcwVu2jKy-ZWKVxuBDqB3AXnukIrzINOl6jErBUqCMeqpll7AYblMyYYtPb-Xplj-CYfUX7CwgotqGfhmLQ0eqQbLler7zc7dpYpRbhIZ8gJyocGnI64WVOCZMzsM4GfonHsBzY-pazafiwMXjXk6YeK5fVdm2H43Acrx71bPCX5rzs7-1IAOrfV60-XLGFFsUPmdeIWuVwGfX-ow6ZfsVa-jZHxEwv_ITf3OKNOZ3QL387A_mgqk165b19rWwSnXpFq7ah4evI_7208WwoSZpiiSd8s03JBlykpyrnfBhvFXBf35iBYp-Ua2O6taeJWyaQSskxx4y0IjOXbtiJOMVzggoRw_8s1Vw0n9kFI0WVFVOUYF0aW1dy7loe1xb_VxIFkfiU706S_dcmkyU4ber4JBFsX4p76of_32R68bshlki45ddFyuSYe02IRoo7fh53j-mOUZM9WlJzRnx1vRu9ju7gdfix0vWc_pZhl_XBnwqr-XBb1yMn9UvyVWWoe87aI_MepX4hWbyd4m7sMUZR1B68Ontwz7j_W3Z_2vbY5OZ78_WBIteUyo8UbWd-eqaUY1-m2jhQ3Id86B4BBolUZrhu5gug6U7Fa0b9B_wvBpr6jgf8Wmg9Vliexh5hVochB8l96Sqc4S7Wd4-lqI6jnlfUy7h9sXpIV5VmihZvzyQkBqURahyiV5-0gaSuO6ZsrmdS4Fz7jQk_R9xcd_ouap1pinf0uUgspZuM-Ujp8F1xvgFtlaMQwtci-Zxv4nlnjnMYh5xXI9jgv_eJ-UI5g1VMdx1ic-p3ZbU6obtyQ9fj8YFiyMZhbsYpZz8W95Os9kyF1l1e7ttlxSIVZFaMk2JO9gsc99_sRZczI"
+$headers = @{
+    "Authorization" = "Bearer $token"
+    "Content-Type" = "application/json"
+}
+$body = Get-Content -Raw body.json
+$response = Invoke-WebRequest -Uri "https://us-central1-aiplatform.googleapis.com/v1/projects/chatbot-ecommerce-460621/locations/us-central1/publishers/google/models/gemini-pro:predict" -Method Post -Headers $headers -Body $body
+$response.Content 
